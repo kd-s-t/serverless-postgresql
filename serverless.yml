@@ -1,0 +1,17 @@
+org: bathalla
+app: serverless-postgresql
+service: serverles
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  region: us-west-2
+  runtime: nodejs14.x
+plugins:
+ - serverless-offline
+
+functions:
+  api:
+    handler: handler.handler
+    events:
+      - httpApi: '*'
